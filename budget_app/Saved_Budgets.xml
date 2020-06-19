@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Table>
+  <Budget>
+    <Budget_name>
+      Monthly Spending
+    </Budget_name>
+    <Items>
+      <Item>
+        <Item_name>Rent</Item_name>
+        <Item_val>595</Item_val>
+      </Item>
+      <Item>
+        <Item_name>Grocery Shopping</Item_name>
+        <Item_val>150</Item_val>
+      </Item>
+      <Item>
+        <Item_name>Eating Out</Item_name>
+        <Item_val>30</Item_val>
+      </Item>
+    </Items>
+  </Budget>
+  <Budget>
+    <Budget_name>
+      Budget 2
+    </Budget_name>
+    <Items>
+      <Item>
+        <Item_name>Food</Item_name>
+        <Item_val>100</Item_val>
+      </Item>
+      <Item>
+        <Item_name>Car Payment</Item_name>
+        <Item_val>200</Item_val>          
+      </Item>
+    </Items>
+  </Budget>
+</Table>
