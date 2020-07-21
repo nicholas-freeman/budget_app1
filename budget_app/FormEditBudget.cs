@@ -15,7 +15,8 @@ namespace budget_app
         //constants for field resets
         private readonly string NAME_PROMPT = "Item_Name";
         private readonly string DESC_PROMPT = "Item_Description";
-        private readonly string VAL_PROMPT = "Numeric_Value";
+        private readonly string VAL_PROMPT = "Item_Value";
+        private readonly string SPENT_PROMPT = "Spent_value";
         
         private Budget bgt;
         private void end_creation()
@@ -34,6 +35,7 @@ namespace budget_app
             textBoxName.Text = NAME_PROMPT;
             textBoxDescription.Text = DESC_PROMPT;
             textBoxValue.Text = VAL_PROMPT;
+            textBoxSpent.Text = SPENT_PROMPT;
         }
         public FormEditBudget() //new budget
         {
@@ -74,11 +76,12 @@ namespace budget_app
         }
         private void buttonEnterItem_Click(object sender, EventArgs e)
         {
-            Item itm = new Item(textBoxName.Text, Int32.Parse(textBoxValue.Text));
+            //dont edit spent value in this window
+            Item itm = new Item(textBoxName.Text, Int32.Parse(textBoxValue.Text), Int32.Parse(textBoxSpent.Text), textBoxDescription.Text);
             //editing an existing item
             if (comboBoxItems.SelectedItem != null)
             {
-                MessageBox.Show("gotta do some different stuff");
+                //MessageBox.Show("gotta do some different stuff");
                 bgt.budget_items[comboBoxItems.SelectedIndex] = itm;
             }
             //creating a new item
@@ -90,13 +93,16 @@ namespace budget_app
             textBoxName.Text = NAME_PROMPT;
             textBoxDescription.Text = DESC_PROMPT;
             textBoxValue.Text = VAL_PROMPT;
+            textBoxSpent.Text = SPENT_PROMPT;
         }
 
         private void comboBoxItems_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show(comboBoxItems.SelectedItem.ToString());
             textBoxName.Text = bgt.budget_items[comboBoxItems.SelectedIndex].Item_name;
+            textBoxDescription.Text = bgt.budget_items[comboBoxItems.SelectedIndex].Item_desc;
             textBoxValue.Text = bgt.budget_items[comboBoxItems.SelectedIndex].Item_value.ToString();
+            textBoxSpent.Text = bgt.budget_items[comboBoxItems.SelectedIndex].Spent_value.ToString();
         }
 
         private void buttonSaveExit_Click(object sender, EventArgs e)
