@@ -38,11 +38,12 @@
             this.buttonCreate = new System.Windows.Forms.Button();
             this.textBoxValue = new System.Windows.Forms.TextBox();
             this.buttonSaveExit = new System.Windows.Forms.Button();
+            this.textBoxSpent = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonEnterItem
             // 
-            this.buttonEnterItem.Location = new System.Drawing.Point(26, 128);
+            this.buttonEnterItem.Location = new System.Drawing.Point(26, 156);
             this.buttonEnterItem.Name = "buttonEnterItem";
             this.buttonEnterItem.Size = new System.Drawing.Size(75, 23);
             this.buttonEnterItem.TabIndex = 0;
@@ -119,7 +120,7 @@
             this.textBoxValue.Name = "textBoxValue";
             this.textBoxValue.Size = new System.Drawing.Size(103, 20);
             this.textBoxValue.TabIndex = 8;
-            this.textBoxValue.Text = "Numeric_Value";
+            this.textBoxValue.Text = "Item_Value";
             // 
             // buttonSaveExit
             // 
@@ -131,11 +132,20 @@
             this.buttonSaveExit.UseVisualStyleBackColor = true;
             this.buttonSaveExit.Click += new System.EventHandler(this.buttonSaveExit_Click);
             // 
+            // textBoxSpent
+            // 
+            this.textBoxSpent.Location = new System.Drawing.Point(26, 130);
+            this.textBoxSpent.Name = "textBoxSpent";
+            this.textBoxSpent.Size = new System.Drawing.Size(103, 20);
+            this.textBoxSpent.TabIndex = 10;
+            this.textBoxSpent.Text = "Spent_value";
+            // 
             // FormEditBudget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 421);
+            this.Controls.Add(this.textBoxSpent);
             this.Controls.Add(this.buttonSaveExit);
             this.Controls.Add(this.textBoxValue);
             this.Controls.Add(this.buttonCreate);
@@ -165,5 +175,6 @@
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.TextBox textBoxValue;
         private System.Windows.Forms.Button buttonSaveExit;
+        private System.Windows.Forms.TextBox textBoxSpent;
     }
 }

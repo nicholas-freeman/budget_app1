@@ -21,19 +21,30 @@ namespace budget_app
             get { return item_value; }
             set { item_value = value; }
         }
+        private int spent_value;
+        public int Spent_value
+        {
+            get { return spent_value; }
+            set { spent_value = value; }
+        }
+        private string item_desc;
+        public string Item_desc
+        {
+            get { return item_desc; }
+            set { item_desc = value; }
+        }
         public Item(string n, int val) //constructor
         {
             this.item_name = n;
             this.item_value = val;
+            this.spent_value = 0;
         }
-        /*
-        private int spent_value;
-
-        public int Spent_value
+        public Item(string n, int val, int spnt, string desc)
         {
-            get { return spent_value; }
-            set { spent_value = 0;
-        }     
-         */
+            this.item_name = n;
+            this.item_value = val;
+            this.spent_value = spnt;
+            this.item_desc = desc;
+        }
     }
 }

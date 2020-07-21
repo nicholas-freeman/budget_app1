@@ -26,66 +26,55 @@ namespace budget_app
                 FileStream fs = new FileStream("../../Saved_Budgets.xml", FileMode.Open, FileAccess.Read);
                 XmlTextReader xmlReader = new XmlTextReader(fs);
                 Budget tmp_budget = new Budget("");
-                Item tmp_item;
-                bool new_budget_flag = false;
-                int new_item_flag = 0;
                 string new_item_name = null;
+                string new_item_desc = null;
                 int new_item_val = 0;
+                int new_spent_val = 0;
                 while (xmlReader.Read())
                 {
                     switch (xmlReader.NodeType)
                     {
                         case XmlNodeType.Element:
+                            //start of new budget - set a new tmp_budget
                             if (xmlReader.Name == "Budget_name")
                             {
-                                new_budget_flag = true;
+                                tmp_budget = new Budget(xmlReader.ReadInnerXml().Trim());
+                                //Console.WriteLine(tmp_budget.Budget_name);
                             }
+                            //start of new item
                             else if (xmlReader.Name == "Item_name")
                             {
-                                new_item_flag = 2;
+                                new_item_name = xmlReader.ReadInnerXml().Trim();
                             }
-                            else if (xmlReader.Name == "Item_val")
+                            if (xmlReader.Name == "Item_val")
                             {
-                                new_item_flag = 1;
+                                new_item_val = Int32.Parse(xmlReader.ReadInnerXml().Trim());
                             }
-                            //Console.WriteLine("element");
-                            break;
-                        case XmlNodeType.Text:
-                            if (new_budget_flag == true)
+                            else if (xmlReader.Name == "Spent_val")
                             {
-                                tmp_budget.Budget_name = xmlReader.Value.Trim();
-                                new_budget_flag = false;
+                                new_spent_val = Int32.Parse(xmlReader.ReadInnerXml().Trim());
                             }
-                            else if (new_item_flag == 2)
+                            if (xmlReader.Name == "Item_desc")
                             {
-                                new_item_name = xmlReader.Value.Trim();
-                                new_item_flag = 0;
+                                new_item_desc = xmlReader.ReadInnerXml().Trim();
                             }
-                            else if (new_item_flag == 1)
-                            {
-                                new_item_val = Int32.Parse(xmlReader.Value.Trim());
-                                tmp_item = new Item(new_item_name, new_item_val);
-                                tmp_budget.addItem(tmp_item);
-                                new_item_flag = 0;
-                            }
-                            //Console.WriteLine(xmlReader.Value);
                             break;
                         case XmlNodeType.EndElement:
-                            if (xmlReader.Name == "Budget")
+                            //end of an item -> add item to current tmp_budget
+                            if (xmlReader.Name == "Item")
+                            {
+                                tmp_budget.addItem(new Item(new_item_name, new_item_val, new_spent_val, new_item_desc));
+                            }
+                            //end of budget -> add tmp_budget to list
+                            else if (xmlReader.Name == "Budget")
                             {
                                 Globals.Budgets.Add(tmp_budget);
-                                tmp_budget = new Budget("");
+                                //tmp_budget = new Budget("");
                             }
-                            //Console.WriteLine("end element");
-                            //add new budget down here
                             break;
                     }
                 }
-
-                Console.WriteLine(Globals.Budgets[0].budget_items[0].Item_name);
-                Console.WriteLine(Globals.Budgets[1].budget_items[0].Item_name);
             }
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //load in budgets to Global list from XML
