@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAddSpentValue = new System.Windows.Forms.Button();
             this.labelBudgetOverUnder = new System.Windows.Forms.Label();
+            this.buttonDeleteBudget = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxBudgets
@@ -83,9 +84,9 @@
             // 
             // buttonNewBudget
             // 
-            this.buttonNewBudget.Location = new System.Drawing.Point(12, 370);
+            this.buttonNewBudget.Location = new System.Drawing.Point(12, 117);
             this.buttonNewBudget.Name = "buttonNewBudget";
-            this.buttonNewBudget.Size = new System.Drawing.Size(115, 23);
+            this.buttonNewBudget.Size = new System.Drawing.Size(118, 23);
             this.buttonNewBudget.TabIndex = 5;
             this.buttonNewBudget.Text = "Create New Budget";
             this.buttonNewBudget.UseVisualStyleBackColor = true;
@@ -93,7 +94,7 @@
             // 
             // buttonEditBudget
             // 
-            this.buttonEditBudget.Location = new System.Drawing.Point(157, 370);
+            this.buttonEditBudget.Location = new System.Drawing.Point(12, 59);
             this.buttonEditBudget.Name = "buttonEditBudget";
             this.buttonEditBudget.Size = new System.Drawing.Size(118, 23);
             this.buttonEditBudget.TabIndex = 6;
@@ -161,11 +162,22 @@
             this.labelBudgetOverUnder.TabIndex = 13;
             this.labelBudgetOverUnder.Text = "labelBudgetOverUnder";
             // 
+            // buttonDeleteBudget
+            // 
+            this.buttonDeleteBudget.Location = new System.Drawing.Point(12, 88);
+            this.buttonDeleteBudget.Name = "buttonDeleteBudget";
+            this.buttonDeleteBudget.Size = new System.Drawing.Size(118, 23);
+            this.buttonDeleteBudget.TabIndex = 14;
+            this.buttonDeleteBudget.Text = "Delete Selected Budget";
+            this.buttonDeleteBudget.UseVisualStyleBackColor = true;
+            this.buttonDeleteBudget.Click += new System.EventHandler(this.buttonDeleteBudget_Click);
+            // 
             // FormBudgetApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 417);
+            this.Controls.Add(this.buttonDeleteBudget);
             this.Controls.Add(this.labelBudgetOverUnder);
             this.Controls.Add(this.textBoxAddSpentValue);
             this.Controls.Add(this.buttonAddSpentValue);
@@ -201,6 +213,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAddSpentValue;
         private System.Windows.Forms.Label labelBudgetOverUnder;
+        private System.Windows.Forms.Button buttonDeleteBudget;
     }
 }
 

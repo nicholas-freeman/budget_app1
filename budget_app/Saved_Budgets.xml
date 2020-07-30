@@ -23,21 +23,4 @@
 			</Item>
 		</Items>
 	</Budget>
-	<Budget>
-		<Budget_name>Budget 2</Budget_name>
-		<Items>
-			<Item>
-				<Item_name>Food</Item_name>
-				<Item_val>100</Item_val>
-				<Spent_val>75</Spent_val>
-				<Item_desc>Self explanatory</Item_desc>
-			</Item>
-			<Item>
-				<Item_name>Car Payment</Item_name>
-				<Item_val>200</Item_val>
-				<Spent_val>200</Spent_val>
-				<Item_desc>Vroom vroom</Item_desc>
-			</Item>
-		</Items>
-	</Budget>
 </Table>
