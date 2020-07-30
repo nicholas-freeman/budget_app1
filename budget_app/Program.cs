@@ -130,20 +130,6 @@ namespace budget_app
 
             saveXmlBudgets();
 
-            /* write to file             
-            FileStream fs = new FileStream("../../../output.xml", FileMode.Open, FileAccess.ReadWrite);
-            fs.SetLength(0);
-            XmlTextWriter xmlWriter = new XmlTextWriter(fs, null);
-
-            xmlWriter.WriteStartDocument();
-
-            xmlWriter.WriteStartElement("Budget");
-            xmlWriter.WriteElementString("Budget_name","this is a budget name");
-            xmlWriter.WriteEndElement();
-
-            xmlWriter.Close();
-            */
-
         }
     }
 }

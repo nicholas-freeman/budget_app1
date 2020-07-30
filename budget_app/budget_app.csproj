@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Budget.cs" />
+    <Compile Include="BudgetDeleteConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BudgetDeleteConfirmation.Designer.cs">
+      <DependentUpon>BudgetDeleteConfirmation.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditBudget.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BudgetDeleteConfirmation.resx">
+      <DependentUpon>BudgetDeleteConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditBudget.resx">
       <DependentUpon>FormEditBudget.cs</DependentUpon>
     </EmbeddedResource>

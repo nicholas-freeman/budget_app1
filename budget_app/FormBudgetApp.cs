@@ -43,6 +43,25 @@ namespace budget_app
                 return "This item is currently $" + v.ToString() + " under budget";
             }
         }
+        private void buttonEditBudget_Click(object sender, EventArgs e)
+        {
+            FormEditBudget edit = new FormEditBudget(comboBoxBudgets.SelectedIndex);
+            this.Hide();
+            edit.ShowDialog();
+            this.Show();
+        }
+        private void buttonDeleteBudget_Click(object sender, EventArgs e)
+        {
+            int i = comboBoxBudgets.SelectedIndex;
+            BudgetDeleteConfirmation confirm_delete = new BudgetDeleteConfirmation(Globals.Budgets[i].Budget_name);
+            confirm_delete.ShowDialog();
+            if (confirm_delete.Del_bud == true ) //then delete budget
+            {
+                Globals.Budgets.RemoveAt(i);
+                comboBoxBudgets.Items.RemoveAt(i);
+            }
+
+        }
         private void buttonNewBudget_Click(object sender, EventArgs e)
         {
             FormEditBudget edit = new FormEditBudget();
@@ -51,15 +70,9 @@ namespace budget_app
             this.Show();
             //add the created budget to the dropbox
             comboBoxBudgets.Items.Add(Globals.Budgets[Globals.Budgets.Count-1].Budget_name);
+        }
 
-        }
-        private void buttonEditBudget_Click(object sender, EventArgs e)
-        {
-            FormEditBudget edit = new FormEditBudget(comboBoxBudgets.SelectedIndex);
-            this.Hide();
-            edit.ShowDialog();
-            this.Show();
-        }
+
 
         private void comboBoxBudgetItems_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -97,5 +110,6 @@ namespace budget_app
             labelBudgetOverUnder.Text = overUnderBudgetLabeling();
             textBoxAddSpentValue.Text = "";
         }
+
     }
 }
