@@ -74,6 +74,50 @@ namespace budget_app
                             break;
                     }
                 }
+                xmlReader.Close();
+                fs.Close();
+            }
+            void saveXmlBudgets()
+            {
+                FileStream fs = new FileStream("../../Saved_Budgets.xml", FileMode.Open, FileAccess.ReadWrite);
+                fs.SetLength(0);
+                XmlTextWriter xmlWriter = new XmlTextWriter(fs, null);
+                xmlWriter.WriteStartDocument();
+                xmlWriter.WriteWhitespace("\n");
+                xmlWriter.WriteStartElement("Table");
+                for(int i=0; i<Globals.Budgets.Count; i++)
+                {
+                    xmlWriter.WriteWhitespace("\n\t");
+                    xmlWriter.WriteStartElement("Budget");
+                    xmlWriter.WriteWhitespace("\n\t\t");
+                    xmlWriter.WriteElementString("Budget_name", Globals.Budgets[i].Budget_name);
+                    xmlWriter.WriteWhitespace("\n\t\t");
+                    xmlWriter.WriteStartElement("Items");
+                    //loop for items start
+                    for(int k=0; k<Globals.Budgets[i].budget_items.Count; k++)
+                    {
+                        xmlWriter.WriteWhitespace("\n\t\t\t");
+                        xmlWriter.WriteStartElement("Item");
+                        xmlWriter.WriteWhitespace("\n\t\t\t\t");
+                        xmlWriter.WriteElementString("Item_name", Globals.Budgets[i].budget_items[k].Item_name);
+                        xmlWriter.WriteWhitespace("\n\t\t\t\t");
+                        xmlWriter.WriteElementString("Item_val", Globals.Budgets[i].budget_items[k].Item_value.ToString());
+                        xmlWriter.WriteWhitespace("\n\t\t\t\t");
+                        xmlWriter.WriteElementString("Spent_val", Globals.Budgets[i].budget_items[k].Spent_value.ToString());
+                        xmlWriter.WriteWhitespace("\n\t\t\t\t");
+                        xmlWriter.WriteElementString("Item_desc", Globals.Budgets[i].budget_items[k].Item_desc);
+                        xmlWriter.WriteWhitespace("\n\t\t\t");
+                        xmlWriter.WriteEndElement(); //Item
+                    }
+                    xmlWriter.WriteWhitespace("\n\t\t");
+                    xmlWriter.WriteEndElement(); //Items
+                    xmlWriter.WriteWhitespace("\n\t");
+                    xmlWriter.WriteEndElement(); //Budget
+                }
+                xmlWriter.WriteWhitespace("\n");
+                xmlWriter.WriteEndElement(); //Table
+                xmlWriter.Close();
+
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -83,6 +127,23 @@ namespace budget_app
             loadXmlBudgets();
 
             Application.Run(new FormBudgetApp());
+
+            saveXmlBudgets();
+
+            /* write to file             
+            FileStream fs = new FileStream("../../../output.xml", FileMode.Open, FileAccess.ReadWrite);
+            fs.SetLength(0);
+            XmlTextWriter xmlWriter = new XmlTextWriter(fs, null);
+
+            xmlWriter.WriteStartDocument();
+
+            xmlWriter.WriteStartElement("Budget");
+            xmlWriter.WriteElementString("Budget_name","this is a budget name");
+            xmlWriter.WriteEndElement();
+
+            xmlWriter.Close();
+            */
+
         }
     }
 }
