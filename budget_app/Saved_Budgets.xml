@@ -1,47 +1,43 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0"?>
 <Table>
-  <Budget>
-    <Budget_name>
-      Monthly Spending
-    </Budget_name>
-    <Items>
-      <Item>
-        <Item_name>Rent</Item_name>
-        <Item_val>595</Item_val>
-        <Spent_val>595</Spent_val>
-        <Item_desc>Monthly rent payment</Item_desc>
-      </Item>
-      <Item>
-        <Item_name>Grocery Shopping</Item_name>
-        <Item_val>150</Item_val>
-        <Spent_val>15</Spent_val>
-        <Item_desc>Food for cooking at home</Item_desc>
-      </Item>
-      <Item>
-        <Item_name>Eating Out</Item_name>
-        <Item_val>30</Item_val>
-        <Spent_val>10</Spent_val>
-        <Item_desc>Restaurants, fast food, etc.</Item_desc>
-      </Item>
-    </Items>
-  </Budget>
-  <Budget>
-    <Budget_name>
-      Budget 2
-    </Budget_name>
-    <Items>
-      <Item>
-        <Item_name>Food</Item_name>
-        <Item_val>100</Item_val>
-        <Spent_val>75</Spent_val>
-        <Item_desc>Self explanatory</Item_desc>
-      </Item>
-      <Item>
-        <Item_name>Car Payment</Item_name>
-        <Item_val>200</Item_val>
-        <Spent_val>200</Spent_val>
-        <Item_desc>Vroom vroom</Item_desc>
-      </Item>
-    </Items>
-  </Budget>
+	<Budget>
+		<Budget_name>Monthly Spending</Budget_name>
+		<Items>
+			<Item>
+				<Item_name>Rent</Item_name>
+				<Item_val>595</Item_val>
+				<Spent_val>595</Spent_val>
+				<Item_desc>Monthly rent payment</Item_desc>
+			</Item>
+			<Item>
+				<Item_name>Grocery Shopping</Item_name>
+				<Item_val>150</Item_val>
+				<Spent_val>15</Spent_val>
+				<Item_desc>Food for cooking at home</Item_desc>
+			</Item>
+			<Item>
+				<Item_name>Eating Out</Item_name>
+				<Item_val>30</Item_val>
+				<Spent_val>5</Spent_val>
+				<Item_desc>Restaurants, fast food, etc.</Item_desc>
+			</Item>
+		</Items>
+	</Budget>
+	<Budget>
+		<Budget_name>Budget 2</Budget_name>
+		<Items>
+			<Item>
+				<Item_name>Food</Item_name>
+				<Item_val>100</Item_val>
+				<Spent_val>75</Spent_val>
+				<Item_desc>Self explanatory</Item_desc>
+			</Item>
+			<Item>
+				<Item_name>Car Payment</Item_name>
+				<Item_val>200</Item_val>
+				<Spent_val>200</Spent_val>
+				<Item_desc>Vroom vroom</Item_desc>
+			</Item>
+		</Items>
+	</Budget>
 </Table>
