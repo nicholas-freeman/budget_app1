@@ -23,4 +23,44 @@
 			</Item>
 		</Items>
 	</Budget>
+	<Budget>
+		<Budget_name>Budget 2</Budget_name>
+		<Items>
+			<Item>
+				<Item_name>Rent</Item_name>
+				<Item_val>100</Item_val>
+				<Spent_val>0</Spent_val>
+				<Item_desc>its rent</Item_desc>
+			</Item>
+			<Item>
+				<Item_name>Food</Item_name>
+				<Item_val>150</Item_val>
+				<Spent_val>70</Spent_val>
+				<Item_desc>for eating</Item_desc>
+			</Item>
+			<Item>
+				<Item_name>Mcdonalds</Item_name>
+				<Item_val>40</Item_val>
+				<Spent_val>20</Spent_val>
+				<Item_desc>name is descriptive enough</Item_desc>
+			</Item>
+		</Items>
+	</Budget>
+	<Budget>
+		<Budget_name>Please work</Budget_name>
+		<Items>
+			<Item>
+				<Item_name>retn</Item_name>
+				<Item_val>100</Item_val>
+				<Spent_val>200</Spent_val>
+				<Item_desc>desc sample</Item_desc>
+			</Item>
+			<Item>
+				<Item_name>fire</Item_name>
+				<Item_val>20</Item_val>
+				<Spent_val>15</Spent_val>
+				<Item_desc>for burning</Item_desc>
+			</Item>
+		</Items>
+	</Budget>
 </Table>
